@@ -5,15 +5,25 @@ excerpt: While easy to get started, Astrowind is quite complex internally.  This
 image: https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1651&q=80
 category: Documentation
 tags:
-  - astro
-  - tailwind css
-  - front-end
+- astro
+- tailwind css
+- front-end
 metadata:
   canonical: https://astrowind.vercel.app/astrowind-template-in-depth
 ---
 
+
+import { Image } from "@unpic/astro";
 import DListItem from '~/components/ui/DListItem.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
+
+<Image
+  src="https://res.cloudinary.com/paulapplegate-com/image/upload/v1706306916/Luke.jpg"
+  layout="constrained"
+  width={800}
+  height={600}
+  alt="A lovely bath"
+/>
 
 ## Overview
 

@@ -10,6 +10,7 @@ import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
 import tasks from './src/utils/tasks';
+import { imageService } from "@unpic/astro/service";
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter.mjs';
 
@@ -76,10 +77,15 @@ export default defineConfig({
     tasks(),
   ],
 
-  image: {
-    service: squooshImageService(),
+image: {
+    service: imageService({
+      // This can usually be auto-detected
+      fallbackService: "sharp",
+      placeholder: "blurhash",
+      // This is the default
+      layout: "constrained",
+    }),
   },
-
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin],
